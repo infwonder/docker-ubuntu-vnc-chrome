@@ -9,8 +9,8 @@ This is a Dockerfile that runs Ubuntu Destop with Google Chrome and vncserver pr
        --shm-size=4gb --memory=4gb \
        --device /dev/snd \
        -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
-	  -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
-	  --group-add $(getent group audio | cut -d: -f3) \
+       -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+       --group-add $(getent group audio | cut -d: -f3) \
        --name chrome-vnc \
        --entrypoint="/bin/bash" \
        -v /home/jasonlin/tmp:/data:z <image_id>
